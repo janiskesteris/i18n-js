@@ -15,9 +15,7 @@ module SimplesIdeias
     # full environment will be available during asset compilation.
     # This is required to ensure I18n is loaded.
     def assert_usable_configuration!
-      @usable_configuration ||= Rails.version >= "3.1.1" &&
-        Rails.configuration.assets.initialize_on_precompile ||
-        raise("Cannot precompile i18n-js translations unless environment is initialized. Please set config.assets.initialize_on_precompile to true.")
+      @usable_configuration ||= true
     end
 
     def has_asset_pipeline?
